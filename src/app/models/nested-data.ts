@@ -3,7 +3,7 @@ import { JobPercentages } from './job-percentages';
 export interface NestedData {
   SJtitle: string;
   SName: string;
-  JC: number;
+  NCode: number;
   Orgs?: number;
   Incs?: number;
   Base: JobPercentages;
