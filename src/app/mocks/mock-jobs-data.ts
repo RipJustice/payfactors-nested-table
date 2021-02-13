@@ -2,6 +2,7 @@ import { JobData } from '../models/job-data';
 
 export const MockJobsData: JobData[] = [
   {
+    ID: 'S12546',
     Title: 'Accountant I',
     DCuts: [],
     Emp: [],
@@ -28,6 +29,7 @@ export const MockJobsData: JobData[] = [
     }
   },
   {
+    ID: 'B12546',
     Title: 'Accountant I',
     DCuts: [],
     Emp: [],
@@ -54,9 +56,11 @@ export const MockJobsData: JobData[] = [
     }
   },
   {
+    ID: 'S22546',
     Title: 'Accountant I',
     DCuts: [
       {
+        SID: 'S32456',
         SJtitle: 'Accountant General I',
         SName: 'Radford - United States - Radford',
         NCode: 997986,
@@ -78,6 +82,7 @@ export const MockJobsData: JobData[] = [
         }
       },
       {
+        SID: 'S32556',
         SJtitle: 'Accountant General I',
         SName: 'Radford - United States - Radford',
         NCode: 997986,
@@ -99,6 +104,7 @@ export const MockJobsData: JobData[] = [
         }
       },
       {
+        SID: 'J32456',
         SJtitle: 'Accountant General I',
         SName: 'Radford - United States - Radford',
         NCode: 997986,
@@ -120,6 +126,7 @@ export const MockJobsData: JobData[] = [
         }
       },
       {
+        SID: 'P32456',
         SJtitle: 'Accountant General I',
         SName: 'Radford - United States - Radford',
         NCode: 997986,
@@ -165,6 +172,7 @@ export const MockJobsData: JobData[] = [
     }
   },
   {
+    ID: 'C12546',
     Title: 'Accountant I',
     DCuts: [],
     Emp: [],
@@ -191,6 +199,7 @@ export const MockJobsData: JobData[] = [
     }
   },
   {
+    ID: 'E12546',
     Title: 'Accountant I',
     DCuts: [],
     Emp: [],
@@ -217,6 +226,7 @@ export const MockJobsData: JobData[] = [
     }
   },
   {
+    ID: 'S52546',
     Title: 'Accountant I',
     DCuts: [],
     Emp: [],
@@ -243,6 +253,7 @@ export const MockJobsData: JobData[] = [
     }
   },
   {
+    ID: 'S32546',
     Title: 'Accountant I',
     DCuts: [],
     Emp: [],
@@ -269,6 +280,7 @@ export const MockJobsData: JobData[] = [
     }
   },
   {
+    ID: 'S53446',
     Title: 'Accountant I',
     DCuts: [],
     Emp: [],
@@ -295,6 +307,7 @@ export const MockJobsData: JobData[] = [
     }
   },
   {
+    ID: 'S12549',
     Title: 'Accountant I',
     DCuts: [],
     Emp: [],
@@ -321,6 +334,7 @@ export const MockJobsData: JobData[] = [
     }
   },
   {
+    ID: 'S91546',
     Title: 'Accountant I',
     DCuts: [],
     Emp: [],

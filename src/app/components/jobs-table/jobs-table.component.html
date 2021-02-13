@@ -1,1 +1,147 @@
-<p>jobs-table works!</p>
+<p-table tableStyleClass="pf-main-table" [value]="jobsData" dataKey="ID" [scrollable]="true" [style]="{width:'1800px'}">
+  <ng-template pTemplate="colgroup" let-columns>
+    <colgroup>
+        <col style="width:750px">
+        <col style="width:300px">
+        <col style="width:500px">
+        <col style="width:500px">
+    </colgroup>
+  </ng-template>
+  <ng-template pTemplate="header">
+    <tr class="pf-h-row">
+        <th class="pf-th">
+          <div class="p-grid p-text-left">
+            <div class="p-col-12 t-col-fake-txt-height"></div>
+            <div class="p-col-1">
+              <p-triStateCheckbox></p-triStateCheckbox>
+            </div>
+            <div class="p-col-11">Job Title</div>
+          </div>
+        </th>
+        <th class="pf-th">
+          <div class="p-grid p-text-center">
+            <div class="p-col-12">
+              Info
+            </div>
+            <div class="p-col-4">Job Code</div>
+            <div class="p-col-4">Orgs</div>
+            <div class="p-col-4">Incs</div>
+          </div>
+        </th>
+        <th class="pf-th">
+          <div class="p-grid p-text-center">
+            <div class="p-col-12">
+              Base
+            </div>
+            <div class="p-col t-col-20">Avg.</div>
+            <div class="p-col t-col-20">25th</div>
+            <div class="p-col t-col-20">50th</div>
+            <div class="p-col t-col-20">75th</div>
+            <div class="p-col t-col-20">90th</div>
+          </div>
+        </th>
+        <th class="pf-th">
+          <div class="p-grid p-text-center">
+            <div class="p-col-12">
+              TC
+            </div>
+            <div class="p-col t-col-20">Avg.</div>
+            <div class="p-col t-col-20">25th</div>
+            <div class="p-col t-col-20">50th</div>
+            <div class="p-col t-col-20">75th</div>
+            <div class="p-col t-col-20">90th</div>
+          </div>
+        </th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-job let-expanded="expanded">
+    <tr class="pf-b-row">
+      <td class="pf-b-td">
+        <div class="p-grid p-text-left">
+          <div class="p-col-1">
+            <p-triStateCheckbox></p-triStateCheckbox>
+          </div>
+          <div class="p-col-11">
+            {{ job.Title }}
+          </div>
+        </div>
+        <div class="p-grid p-text-left pf-t-links" [ngStyle]="{'visibility': (job.DCuts.length || job.Emp.length || job.Hist.length || job.Structures.length || job.Info.length || job.Notes.length) ? 'visible' : 'hidden'}">
+          <div class="pf-t-link">
+            <span [pRowToggler]="job">Data Cuts {{ job.DCuts.length ? '('+job.DCuts.length+')' : '' }}</span>
+          </div>
+          <div class="pf-t-link">
+            Employees {{ job.Emp.length ? '('+job.Emp.length+')' : '' }}
+          </div>
+          <div class="pf-t-link">
+            History {{ job.Hist.length ? '('+job.Hist.length+')' : '' }}
+          </div>
+          <div class="pf-t-link">
+            Structures {{ job.Structures.length ? '('+job.Structures.length+')' : '' }}
+          </div>
+          <div class="pf-t-link">
+            Job Info {{ job.Info.length ? '('+job.Info.length+')' : '' }}
+          </div>
+          <div class="pf-t-link">
+            Notes {{ job.Notes.length ? '('+job.Notes.length+')' : '' }}
+          </div>
+        </div>
+      </td>
+      <td class="pf-b-td">
+        <div class="p-grid p-text-center">
+          <div class="p-col p-col-4">{{ job.Code }}</div>
+          <div class="p-col p-col-4">{{ job.Orgs }}</div>
+          <div class="p-col p-col-4">{{ job.Inc }}</div>
+        </div>
+      </td>
+      <td class="pf-b-td">
+        <div class="p-grid p-text-center">
+          <div class="p-col t-col-20">{{ job.Base.Avg }}</div>
+          <div class="p-col t-col-20">{{ job.Base.First }}</div>
+          <div class="p-col t-col-20">{{ job.Base.Second }}</div>
+          <div class="p-col t-col-20">{{ job.Base.Third }}</div>
+          <div class="p-col t-col-20">{{ job.Base.Fourth }}</div>
+        </div>
+      </td>
+      <td class="pf-b-td">
+        <div class="p-grid p-text-center">
+          <div class="p-col t-col-20">{{ job.TC.Avg }}</div>
+          <div class="p-col t-col-20">{{ job.TC.First }}</div>
+          <div class="p-col t-col-20">{{ job.TC.Second }}</div>
+          <div class="p-col t-col-20">{{ job.TC.Third }}</div>
+          <div class="p-col t-col-20">{{ job.TC.Fourth }}</div>
+        </div>
+      </td>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="rowexpansion" let-job>
+    <tr>
+      <td>
+        <div>
+          <p-table [value]="job.DCuts" dataKey="SID" tableStyleClass="pf-sub-table">
+            <ng-template pTemplate="header">
+              <tr class="pf-s-row">
+                <th class="pf-s-th">
+                  <div class="p-grid p-text-left">
+                    <div class="p-col-1">Weight</div>
+                    <div class="p-col-1">Adjust</div>
+                    <div class="p-col-5">Survey Job Title</div>
+                    <div class="p-col-5">Survey Name</div>
+                  </div>
+                </th>
+
+
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-dcut>
+              <tr>
+                <td>
+                  {{ dcut.SJtitle }}
+                </td>
+              </tr>
+            </ng-template>
+          </p-table>
+        </div>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>

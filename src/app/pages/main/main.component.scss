@@ -1,0 +1,26 @@
+.pf-header {
+  height: 47px;
+  padding: 0;
+  background: #1F2F3D url("../../../assets/pfLogo.png") no-repeat left;
+  background-size: 140px;
+}
+.pf-sidebar {
+  width: 56px;
+  background: #293B4A;
+}
+:host ::ng-deep {
+  .p-component {
+    font-size: 14px;
+  }
+  .p-checkbox {
+    width: 15px;
+    height: 15px;
+    .p-checkbox-box {
+      width: 15px;
+      height: 15px;
+      .p-checkbox-icon {
+        font-size: 10px;
+      }
+    }
+  }
+}
