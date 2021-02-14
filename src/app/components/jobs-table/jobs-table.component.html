@@ -67,22 +67,22 @@
         </div>
         <div class="p-grid pf-custom-grid p-text-left pf-t-links" [ngStyle]="{'visibility': (job.DCuts.length || job.Emp.length || job.Hist.length || job.Structures.length || job.Info.length || job.Notes.length) ? 'visible' : 'hidden'}">
           <div [ngClass]="(borderItem.includes('dcut'+job.ID)) ? 'pf-t-link pfTableShown' : 'pf-t-link'">
-            <span class="pf-expander" [pRowToggler]="job" (click)="addBorder('dcut'+job.ID)" >Data Cuts {{ job.DCuts.length ? '('+job.DCuts.length+')' : '' }}</span>
+            <span [ngClass]="job.DCuts.length ? 'pf-expander' : ''" [pRowToggler]="job" (click)="job.DCuts.length ? addBorder('dcut'+job.ID) : ''" >Data Cuts {{ job.DCuts.length ? '('+job.DCuts.length+')' : '' }}</span>
           </div>
-          <div class="pf-t-link">
-            Employees {{ job.Emp.length ? '('+job.Emp.length+')' : '' }}
+          <div [ngClass]="(borderItem.includes('emp'+job.ID)) ? 'pf-t-link pfTableShown' : 'pf-t-link'">
+            <span [ngClass]="job.Emp.length ? 'pf-expander' : ''" (click)="job.Emp.length ? addBorder('emp'+job.ID) : ''" >Employees {{ job.Emp.length ? '('+job.Emp.length+')' : '' }}</span>
           </div>
-          <div class="pf-t-link">
-            History {{ job.Hist.length ? '('+job.Hist.length+')' : '' }}
+          <div [ngClass]="(borderItem.includes('hist'+job.ID)) ? 'pf-t-link pfTableShown' : 'pf-t-link'">
+            <span [ngClass]="job.Hist.length ? 'pf-expander' : ''" (click)="job.Hist.length ? addBorder('hist'+job.ID) : ''" >History {{ job.Hist.length ? '('+job.Hist.length+')' : '' }}</span>
           </div>
-          <div class="pf-t-link">
-            Structures {{ job.Structures.length ? '('+job.Structures.length+')' : '' }}
+          <div [ngClass]="(borderItem.includes('struct'+job.ID)) ? 'pf-t-link pfTableShown' : 'pf-t-link'">
+            <span [ngClass]="job.Structures.length ? 'pf-expander' : ''" (click)="job.Structures.length ? addBorder('struct'+job.ID) : ''" >Structures {{ job.Structures.length ? '('+job.Structures.length+')' : '' }}</span>
           </div>
-          <div class="pf-t-link">
-            Job Info {{ job.Info.length ? '('+job.Info.length+')' : '' }}
+          <div [ngClass]="(borderItem.includes('info'+job.ID)) ? 'pf-t-link pfTableShown' : 'pf-t-link'">
+            <span [ngClass]="job.Info.length ? 'pf-expander' : ''" (click)="job.Info.length ? addBorder('info'+job.ID) : ''" >Job Info {{ job.Info.length ? '('+job.Info.length+')' : '' }}</span>
           </div>
-          <div class="pf-t-link">
-            Notes {{ job.Notes.length ? '('+job.Notes.length+')' : '' }}
+          <div [ngClass]="(borderItem.includes('notes'+job.ID)) ? 'pf-t-link pfTableShown' : 'pf-t-link'">
+            <span [ngClass]="job.Notes.length ? 'pf-expander' : ''" (click)="job.Notes.length ? addBorder('notes'+job.ID) : ''" >Notes {{ job.Notes.length ? '('+job.Notes.length+')' : '' }}</span>
           </div>
         </div>
       </td>
