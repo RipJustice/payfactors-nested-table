@@ -10,7 +10,7 @@
   <ng-template pTemplate="header">
     <tr class="pf-h-row">
         <th class="pf-th">
-          <div class="p-grid p-text-left">
+          <div class="p-grid pf-custom-grid p-text-left">
             <div class="p-col-12 t-col-fake-txt-height"></div>
             <div class="p-col-1">
               <p-triStateCheckbox></p-triStateCheckbox>
@@ -19,7 +19,7 @@
           </div>
         </th>
         <th class="pf-th">
-          <div class="p-grid p-text-center">
+          <div class="p-grid pf-custom-grid p-text-center">
             <div class="p-col-12">
               Info
             </div>
@@ -29,7 +29,7 @@
           </div>
         </th>
         <th class="pf-th">
-          <div class="p-grid p-text-center">
+          <div class="p-grid pf-custom-grid p-text-center">
             <div class="p-col-12">
               Base
             </div>
@@ -41,7 +41,7 @@
           </div>
         </th>
         <th class="pf-th">
-          <div class="p-grid p-text-center">
+          <div class="p-grid pf-custom-grid p-text-center">
             <div class="p-col-12">
               TC
             </div>
@@ -57,7 +57,7 @@
   <ng-template pTemplate="body" let-job let-expanded="expanded">
     <tr class="pf-b-row">
       <td class="pf-b-td">
-        <div class="p-grid p-text-left">
+        <div class="p-grid pf-custom-grid p-text-left">
           <div class="p-col-1">
             <p-triStateCheckbox></p-triStateCheckbox>
           </div>
@@ -65,9 +65,9 @@
             {{ job.Title }}
           </div>
         </div>
-        <div class="p-grid p-text-left pf-t-links" [ngStyle]="{'visibility': (job.DCuts.length || job.Emp.length || job.Hist.length || job.Structures.length || job.Info.length || job.Notes.length) ? 'visible' : 'hidden'}">
+        <div class="p-grid pf-custom-grid p-text-left pf-t-links" [ngStyle]="{'visibility': (job.DCuts.length || job.Emp.length || job.Hist.length || job.Structures.length || job.Info.length || job.Notes.length) ? 'visible' : 'hidden'}">
           <div class="pf-t-link">
-            <span [pRowToggler]="job">Data Cuts {{ job.DCuts.length ? '('+job.DCuts.length+')' : '' }}</span>
+            <span [pRowToggler]="job" class="pf-expander">Data Cuts {{ job.DCuts.length ? '('+job.DCuts.length+')' : '' }}</span>
           </div>
           <div class="pf-t-link">
             Employees {{ job.Emp.length ? '('+job.Emp.length+')' : '' }}
@@ -87,14 +87,14 @@
         </div>
       </td>
       <td class="pf-b-td">
-        <div class="p-grid p-text-center">
+        <div class="p-grid pf-custom-grid p-text-center">
           <div class="p-col p-col-4">{{ job.Code }}</div>
           <div class="p-col p-col-4">{{ job.Orgs }}</div>
           <div class="p-col p-col-4">{{ job.Inc }}</div>
         </div>
       </td>
       <td class="pf-b-td">
-        <div class="p-grid p-text-center">
+        <div class="p-grid pf-custom-grid p-text-center">
           <div class="p-col t-col-20">{{ job.Base.Avg }}</div>
           <div class="p-col t-col-20">{{ job.Base.First }}</div>
           <div class="p-col t-col-20">{{ job.Base.Second }}</div>
@@ -103,7 +103,7 @@
         </div>
       </td>
       <td class="pf-b-td">
-        <div class="p-grid p-text-center">
+        <div class="p-grid pf-custom-grid p-text-center">
           <div class="p-col t-col-20">{{ job.TC.Avg }}</div>
           <div class="p-col t-col-20">{{ job.TC.First }}</div>
           <div class="p-col t-col-20">{{ job.TC.Second }}</div>
@@ -115,27 +115,98 @@
   </ng-template>
   <ng-template pTemplate="rowexpansion" let-job>
     <tr>
-      <td>
+      <td class="subtable-wrap" colspan="4">
         <div>
-          <p-table [value]="job.DCuts" dataKey="SID" tableStyleClass="pf-sub-table">
+          <p-table [value]="job.DCuts" dataKey="SID" tableStyleClass="pf-sub-table" [scrollable]="true" scrollHeight="100px">
+            <ng-template pTemplate="colgroup" let-columns>
+              <colgroup>
+                  <col style="width:725px">
+                  <col style="width:300px">
+                  <col style="width:500px">
+                  <col style="width:500px">
+              </colgroup>
+            </ng-template>
             <ng-template pTemplate="header">
-              <tr class="pf-s-row">
+              <tr class="pf-sh-row">
                 <th class="pf-s-th">
-                  <div class="p-grid p-text-left">
+                  <div class="p-grid pf-custom-grid p-text-left">
                     <div class="p-col-1">Weight</div>
                     <div class="p-col-1">Adjust</div>
                     <div class="p-col-5">Survey Job Title</div>
                     <div class="p-col-5">Survey Name</div>
                   </div>
                 </th>
-
-
+                <th class="pf-s-th">
+                  <div class="p-grid pf-custom-grid p-text-center">
+                    <div class="p-col-4">Job Code</div>
+                    <div class="p-col-4">Orgs</div>
+                    <div class="p-col-4">Incs</div>
+                  </div>
+                </th>
+                <th class="pf-s-th">
+                  <div class="p-grid pf-custom-grid p-text-center">
+                    <div class="p-col t-col-20">Avg.</div>
+                    <div class="p-col t-col-20">25th</div>
+                    <div class="p-col t-col-20">50th</div>
+                    <div class="p-col t-col-20">75th</div>
+                    <div class="p-col t-col-20">90th</div>
+                  </div>
+                </th>
+                <th class="pf-s-th">
+                  <div class="p-grid pf-custom-grid p-text-center">
+                    <div class="p-col t-col-20">Avg.</div>
+                    <div class="p-col t-col-20">25th</div>
+                    <div class="p-col t-col-20">50th</div>
+                    <div class="p-col t-col-20">75th</div>
+                    <div class="p-col t-col-20">90th</div>
+                  </div>
+                </th>
               </tr>
             </ng-template>
             <ng-template pTemplate="body" let-dcut>
-              <tr>
-                <td>
-                  {{ dcut.SJtitle }}
+              <tr class="pf-sb-row">
+                <td class="pf-sb-td">
+                  <div class="p-grid pf-custom-grid p-text-left pf-f-align">
+                    <div class="p-col-1 pf-input">
+                      <span class="p-input-icon-right">
+                        <i class="pi pi-percentage"></i>
+                        <input type="text" pInputText />
+                      </span>
+                    </div>
+                    <div class="p-col-1 pf-input">
+                      <span class="p-input-icon-right">
+                        <i class="pi pi-percentage"></i>
+                        <input type="text" pInputText />
+                      </span>
+                    </div>
+                    <div class="p-col-5">{{ dcut.SJtitle }}</div>
+                    <div class="p-col-5">{{ dcut.SName }}</div>
+                  </div>
+                </td>
+                <td class="pf-sb-td">
+                  <div class="p-grid pf-custom-grid p-text-center">
+                    <div class="p-col p-col-4">{{ dcut.NCode }}</div>
+                    <div class="p-col p-col-4">{{ dcut.Orgs }}</div>
+                    <div class="p-col p-col-4">{{ dcut.Inc }}</div>
+                  </div>
+                </td>
+                <td class="pf-sb-td">
+                  <div class="p-grid pf-custom-grid p-text-center">
+                    <div class="p-col t-col-20">{{ dcut.Base.Avg }}</div>
+                    <div class="p-col t-col-20">{{ dcut.Base.First }}</div>
+                    <div class="p-col t-col-20">{{ dcut.Base.Second }}</div>
+                    <div class="p-col t-col-20">{{ dcut.Base.Third }}</div>
+                    <div class="p-col t-col-20">{{ dcut.Base.Fourth }}</div>
+                  </div>
+                </td>
+                <td class="pf-sb-td">
+                  <div class="p-grid pf-custom-grid p-text-center">
+                    <div class="p-col t-col-20">{{ dcut.TC.Avg }}</div>
+                    <div class="p-col t-col-20">{{ dcut.TC.First }}</div>
+                    <div class="p-col t-col-20">{{ dcut.TC.Second }}</div>
+                    <div class="p-col t-col-20">{{ dcut.TC.Third }}</div>
+                    <div class="p-col t-col-20">{{ dcut.TC.Fourth }}</div>
+                  </div>
                 </td>
               </tr>
             </ng-template>
