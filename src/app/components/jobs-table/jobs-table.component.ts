@@ -39,4 +39,12 @@ export class JobsTableComponent implements OnInit, OnDestroy {
   addBorder(itemID: string): void {
     (this.borderItem.includes(itemID)) ? this.borderItem = this.borderItem.filter(d => d !== itemID) : this.borderItem.push(itemID);
   }
+
+  addData(): void {
+    alert('Add Data Clicked!');
+  }
+
+  suggestData(): void {
+    alert('Suggest Data Clicked!');
+  }
 }
