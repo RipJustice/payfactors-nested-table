@@ -12,6 +12,10 @@
   margin-left: 25px;
   .pf-t-link {
     padding: .5rem;
+    &.pfTableShown {
+      border-bottom: 4px solid #0088CC;
+      margin-bottom: -1rem;
+    }
   }
 }
 .pf-f-align {
@@ -29,6 +33,7 @@
 .pf-expander {
   cursor: pointer;
 }
+
 :host ::ng-deep {
   .subtable-wrap {
     padding: 0 !important;

@@ -66,8 +66,8 @@
           </div>
         </div>
         <div class="p-grid pf-custom-grid p-text-left pf-t-links" [ngStyle]="{'visibility': (job.DCuts.length || job.Emp.length || job.Hist.length || job.Structures.length || job.Info.length || job.Notes.length) ? 'visible' : 'hidden'}">
-          <div class="pf-t-link">
-            <span [pRowToggler]="job" class="pf-expander">Data Cuts {{ job.DCuts.length ? '('+job.DCuts.length+')' : '' }}</span>
+          <div [ngClass]="(borderItem === 'dcut'+job.ID) ? 'pf-t-link pfTableShown' : 'pf-t-link'">
+            <span class="pf-expander" [pRowToggler]="job" (click)="addBorder('dcut'+job.ID)" >Data Cuts {{ job.DCuts.length ? '('+job.DCuts.length+')' : '' }}</span>
           </div>
           <div class="pf-t-link">
             Employees {{ job.Emp.length ? '('+job.Emp.length+')' : '' }}
