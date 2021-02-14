@@ -1,4 +1,4 @@
-<p-table tableStyleClass="pf-main-table" [value]="jobsData" dataKey="ID" [scrollable]="true" [style]="{width:'1800px'}">
+<p-table tableStyleClass="pf-main-table" [value]="jobsData" dataKey="ID" [scrollable]="true" [style]="{width:'1780px'}">
   <ng-template pTemplate="colgroup" let-columns>
     <colgroup>
         <col style="width:750px">
@@ -10,7 +10,7 @@
   <ng-template pTemplate="header">
     <tr class="pf-h-row">
         <th class="pf-th">
-          <div class="p-grid pf-custom-grid p-text-left">
+          <div class="p-grid pf-custom-grid p-text-left pf-f-align">
             <div class="p-col-12 t-col-fake-txt-height"></div>
             <div class="p-col-1">
               <p-triStateCheckbox></p-triStateCheckbox>
@@ -61,7 +61,7 @@
           <div class="p-col-1">
             <p-triStateCheckbox></p-triStateCheckbox>
           </div>
-          <div class="p-col-11">
+          <div class="p-col-11 pf-title-bold">
             {{ job.Title }}
           </div>
         </div>
@@ -117,7 +117,7 @@
     <tr class="sub-row">
       <td class="subtable-wrap" colspan="4">
         <div>
-          <p-table [value]="job.DCuts" dataKey="SID" tableStyleClass="pf-sub-table" [scrollable]="true" scrollHeight="100px">
+          <p-table [value]="job.DCuts" dataKey="SID" tableStyleClass="pf-sub-table" [scrollable]="true" scrollHeight="250px">
             <ng-template pTemplate="colgroup" let-columns>
               <colgroup>
                   <col style="width:725px">
@@ -166,7 +166,7 @@
             <ng-template pTemplate="body" let-dcut>
               <tr class="pf-sb-row">
                 <td class="pf-sb-td">
-                  <div class="p-grid pf-custom-grid p-text-left pf-f-align">
+                  <div class="pf-sb-td-wrap p-grid pf-custom-grid p-text-left pf-f-align">
                     <div class="p-col-1 pf-input">
                       <span class="p-input-icon-right">
                         <i class="pi pi-percentage"></i>
@@ -184,14 +184,14 @@
                   </div>
                 </td>
                 <td class="pf-sb-td">
-                  <div class="p-grid pf-custom-grid p-text-center">
+                  <div class="pf-sb-td-wrap p-grid pf-custom-grid p-text-center pf-f-align">
                     <div class="p-col p-col-4">{{ dcut.NCode }}</div>
-                    <div class="p-col p-col-4">{{ dcut.Orgs }}</div>
-                    <div class="p-col p-col-4">{{ dcut.Inc }}</div>
+                    <div class="p-col p-col-4">{{ (dcut.Orgs) ? dcut.Orgs : '-'}}</div>
+                    <div class="p-col p-col-4">{{ (dcut.Inc) ? dcut.Inc : '-' }}</div>
                   </div>
                 </td>
                 <td class="pf-sb-td">
-                  <div class="p-grid pf-custom-grid p-text-center">
+                  <div class="pf-sb-td-wrap p-grid pf-custom-grid p-text-center pf-f-align">
                     <div class="p-col t-col-20">{{ dcut.Base.Avg }}</div>
                     <div class="p-col t-col-20">{{ dcut.Base.First }}</div>
                     <div class="p-col t-col-20">{{ dcut.Base.Second }}</div>
@@ -200,12 +200,22 @@
                   </div>
                 </td>
                 <td class="pf-sb-td">
-                  <div class="p-grid pf-custom-grid p-text-center">
+                  <div class="pf-sb-td-wrap p-grid pf-custom-grid p-text-center pf-f-align">
                     <div class="p-col t-col-20">{{ dcut.TC.Avg }}</div>
                     <div class="p-col t-col-20">{{ dcut.TC.First }}</div>
                     <div class="p-col t-col-20">{{ dcut.TC.Second }}</div>
                     <div class="p-col t-col-20">{{ dcut.TC.Third }}</div>
                     <div class="p-col t-col-20">{{ dcut.TC.Fourth }}</div>
+                  </div>
+                </td>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="footer">
+              <tr>
+                <td class="pf-footer-td" colspan="4">
+                  <div class="pf-st-footer">
+                    <p-button styleClass="p-button-link" label="Add Data"></p-button>
+                    <p-button styleClass="p-button-link" label="Suggest Data"></p-button>
                   </div>
                 </td>
               </tr>

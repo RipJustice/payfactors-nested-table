@@ -1,3 +1,5 @@
+@import '../../../assets/_vars.scss';
+
 .pf-h-row {
   .pf-th {
     .t-col-fake-txt-height {
@@ -8,12 +10,20 @@
     }
   }
 }
+.pf-custom-grid {
+  margin: 0;
+}
+.pf-sb-td-wrap {
+  background: $grey1;
+  border: 1px solid $grey2;
+  min-height: 47px;
+}
 .pf-t-links {
   margin-left: 25px;
   .pf-t-link {
-    padding: .5rem;
+    padding: .5rem .5rem 0 .5rem;
     &.pfTableShown {
-      border-bottom: 4px solid #0088CC;
+      border-bottom: 4px solid $blue;
       margin-bottom: -1rem;
     }
   }
@@ -27,34 +37,60 @@
     padding: 5px 15px 5px 5px;
   }
 }
-.pf-custom-grid {
-  margin: 0;
-}
 .pf-expander {
   cursor: pointer;
 }
+.pf-title-bold {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+
 
 :host ::ng-deep {
-  .subtable-wrap {
-    padding: 0 !important;
-    border: none !important;
-    .p-datatable {
-      &.p-component {
-        &.p-datatable-scrollable {
-          box-shadow: 1px 1px 5px #d2d2d2;
-        }
-      }
-    }
-  }
   .p-input-icon-right > i:last-of-type {
     font-size: 12px;
-    color: #000;
+    color: $dark;
     right: .2rem;
   }
   .p-datatable {
+    .p-datatable-thead > tr > th {
+      background: $light;
+      color: $dark;
+      &.pf-th {
+        border-width: 0 1px 1px 0;
+        padding: .2rem 1rem;
+      }
+      &.pf-s-th {
+        font-weight: normal;
+      }
+    }
+    .p-datatable-tbody > tr > td {
+      color: $dark;
+      &.subtable-wrap {
+        padding: 0;
+        border: none;
+        .p-datatable {
+          &.p-component {
+            &.p-datatable-scrollable {
+              box-shadow: 1px 1px 5px $grey3;
+            }
+          }
+        }
+      }
+    }
+    .p-datatable-tfoot > tr > td {
+      &.pf-footer-td {
+        padding: 0;
+        .pf-st-footer {
+          background: $light;
+          padding: 1rem;
+        }
+      }
+    }
     &.p-component {
       &.p-datatable-scrollable {
-        border: 1px solid #e9ecef;
+        border: 1px solid $grey4;
       }
     }
   }
