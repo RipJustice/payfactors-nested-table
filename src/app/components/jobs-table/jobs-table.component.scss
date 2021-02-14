@@ -12,6 +12,13 @@
 }
 .pf-custom-grid {
   margin: 0;
+  &.pf-gpadding-tr {
+    padding: .5rem .5rem 0 0;
+    margin-left: -10px;
+  }
+  &.pf-gpadding-trl {
+    padding-bottom: 0;
+  }
 }
 .pf-sb-td-wrap {
   background: $grey1;
@@ -19,7 +26,7 @@
   min-height: 47px;
 }
 .pf-t-links {
-  margin-left: 25px;
+  margin-left: -25px;
   .pf-t-link {
     padding: .5rem .5rem 0 .5rem;
     &.pfTableShown {

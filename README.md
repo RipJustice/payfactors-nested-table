@@ -11,7 +11,7 @@ Future possible additions not yet added:
   - The mock data would be replaced with one or more api calls to return the data. Ideally one api would serve up this data using a reworked version of the existing service method however forkJoin or mergeMap/switchMap/concatMap logic could also be used to combine data from several api's if necessary to obtain the needed data. The nested table structure and models for the data may change depending on how the final data is structured along with the content of the data.
 
   - Check boxes, inputs and additional buttons in the app would need to have their functionality implemented.
-  
+
   - Additionally, right now the current parent table is intentionally too large for the space allotted to it as part of the project was to have the parent scroll horizontally with the nested tables being capable of a vertical scroll when needed. Fitting the parent table to the screen so that it only scrolls horizontally if the screen is substantially shrunk would be better and adding paging or virtual scrolling to the table to account for larger data sets would also be good to have in the project.
 
 # PayfactorsNestedTable
@@ -20,7 +20,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-Run `npm start` for a dev server. Navigate to `http://localhost:4001/`. The app will automatically reload if you change any of the source files.
+Run `npm start` for a dev server. Navigate to `http://localhost:4001/applications/payfactors-nested-table/`. The app will automatically reload if you change any of the source files.
 
 ## Build
 
