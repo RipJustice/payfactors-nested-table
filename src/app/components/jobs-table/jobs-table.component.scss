@@ -48,6 +48,20 @@
 
 
 :host ::ng-deep {
+  .p-component {
+    font-size: 14px;
+  }
+  .p-checkbox {
+    width: 15px;
+    height: 15px;
+    .p-checkbox-box {
+      width: 15px;
+      height: 15px;
+      .p-checkbox-icon {
+        font-size: 10px;
+      }
+    }
+  }
   .p-input-icon-right > i:last-of-type {
     font-size: 12px;
     color: $dark;

@@ -1,0 +1,17 @@
+@import '../assets/_vars.scss';
+
+.pf-header {
+  height: 70px;
+  padding: 0;
+  background: $dblue1 url("../assets/pfLogo.png") no-repeat left;
+  background-size: 200px;
+}
+.pf-sidebar {
+  width: 80px;
+  background: $dblue2;
+  margin-bottom: -8px;
+}
+.pf-main-area {
+  padding: 25px;
+  width: calc(100% - 80px);
+}
