@@ -11,7 +11,7 @@ import { JobData } from '../../models/job-data';
 export class JobsTableComponent implements OnInit, OnDestroy {
   private subscriptions = new Array<Subscription>();
   jobsData: JobData[];
-  borderItem: string;
+  borderItem: any[] = [];
 
   constructor(private mSvc: MockService) { }
 
@@ -37,7 +37,6 @@ export class JobsTableComponent implements OnInit, OnDestroy {
   }
 
   addBorder(itemID: string): void {
-    (this.borderItem === itemID) ? this.borderItem = '' : this.borderItem = itemID;
-    console.log(this.borderItem);
+    (this.borderItem.includes(itemID)) ? this.borderItem = this.borderItem.filter(d => d !== itemID) : this.borderItem.push(itemID);
   }
 }
