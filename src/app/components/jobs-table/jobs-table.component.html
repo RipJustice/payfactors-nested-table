@@ -114,7 +114,7 @@
     </tr>
   </ng-template>
   <ng-template pTemplate="rowexpansion" let-job>
-    <tr>
+    <tr class="sub-row">
       <td class="subtable-wrap" colspan="4">
         <div>
           <p-table [value]="job.DCuts" dataKey="SID" tableStyleClass="pf-sub-table" [scrollable]="true" scrollHeight="100px">
@@ -170,13 +170,13 @@
                     <div class="p-col-1 pf-input">
                       <span class="p-input-icon-right">
                         <i class="pi pi-percentage"></i>
-                        <input type="text" pInputText />
+                        <input type="text" pInputText maxlength="2" />
                       </span>
                     </div>
                     <div class="p-col-1 pf-input">
                       <span class="p-input-icon-right">
                         <i class="pi pi-percentage"></i>
-                        <input type="text" pInputText />
+                        <input type="text" pInputText maxlength="2" />
                       </span>
                     </div>
                     <div class="p-col-5">{{ dcut.SJtitle }}</div>

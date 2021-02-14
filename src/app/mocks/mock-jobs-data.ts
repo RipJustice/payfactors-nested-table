@@ -174,7 +174,52 @@ export const MockJobsData: JobData[] = [
   {
     ID: 'C12546',
     Title: 'Accountant I',
-    DCuts: [],
+    DCuts: [
+      {
+        SID: 'SY2456',
+        SJtitle: 'Accountant General I',
+        SName: 'Radford - United States - Radford',
+        NCode: 997986,
+        Orgs: null,
+        Incs: null,
+        Base: {
+          Avg: 56.7,
+          First: 50.2,
+          Second: 55.7,
+          Third: 61.9,
+          Fourth: 63.9
+        },
+        TC: {
+          Avg: 48.4,
+          First: 41.2,
+          Second: 45.7,
+          Third: 50.9,
+          Fourth: 55.9
+        }
+      },
+      {
+        SID: 'S32BV6',
+        SJtitle: 'Accountant General I',
+        SName: 'Radford - United States - Radford',
+        NCode: 997986,
+        Orgs: null,
+        Incs: null,
+        Base: {
+          Avg: 56.7,
+          First: 50.2,
+          Second: 55.7,
+          Third: 61.9,
+          Fourth: 63.9
+        },
+        TC: {
+          Avg: 48.4,
+          First: 41.2,
+          Second: 45.7,
+          Third: 50.9,
+          Fourth: 55.9
+        }
+      }
+    ],
     Emp: [],
     Hist: [],
     Structures: [],
@@ -282,7 +327,74 @@ export const MockJobsData: JobData[] = [
   {
     ID: 'S53446',
     Title: 'Accountant I',
-    DCuts: [],
+    DCuts: [
+      {
+        SID: 'SRT456',
+        SJtitle: 'Accountant General I',
+        SName: 'Radford - United States - Radford',
+        NCode: 997986,
+        Orgs: null,
+        Incs: null,
+        Base: {
+          Avg: 56.7,
+          First: 50.2,
+          Second: 55.7,
+          Third: 61.9,
+          Fourth: 63.9
+        },
+        TC: {
+          Avg: 48.4,
+          First: 41.2,
+          Second: 45.7,
+          Third: 50.9,
+          Fourth: 55.9
+        }
+      },
+      {
+        SID: 'S325F6',
+        SJtitle: 'Accountant General I',
+        SName: 'Radford - United States - Radford',
+        NCode: 997986,
+        Orgs: null,
+        Incs: null,
+        Base: {
+          Avg: 56.7,
+          First: 50.2,
+          Second: 55.7,
+          Third: 61.9,
+          Fourth: 63.9
+        },
+        TC: {
+          Avg: 48.4,
+          First: 41.2,
+          Second: 45.7,
+          Third: 50.9,
+          Fourth: 55.9
+        }
+      },
+      {
+        SID: 'JT2456',
+        SJtitle: 'Accountant General I',
+        SName: 'Radford - United States - Radford',
+        NCode: 997986,
+        Orgs: null,
+        Incs: null,
+        Base: {
+          Avg: 56.7,
+          First: 50.2,
+          Second: 55.7,
+          Third: 61.9,
+          Fourth: 63.9
+        },
+        TC: {
+          Avg: 48.4,
+          First: 41.2,
+          Second: 45.7,
+          Third: 50.9,
+          Fourth: 55.9
+        }
+      }
+    ],
     Emp: [],
     Hist: [],
     Structures: [],
